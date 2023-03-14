@@ -17,7 +17,7 @@ class IndexPage(View):
         socials = user.socials.all()
         return render(
             request=request,
-            template_name='blog/index.html',
+            template_name='index.html',
             context={
                 'user': user,
                 'skills': skills,
