@@ -1,0 +1,426 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% load static %}
+
+{% block title %} Cho'girmali Blog {% endblock title %}
+
+{% block content %}
+
+  <div id="hero" class="hero route bg-image" style="background-image: url({% static 'assets/img/hero-bg.jpg' %})">
+    <div class="hero-content display-table">
+      <div class="table-cell">
+        <div class="container">
+          <!--<p class="display-6 color-d">Hello, world!</p>-->
+          <h1 class="hero-title mb-4"><span class='text-primary'><</span> {{ user.full_name }}<span class='text-primary'>></span></h1>
+          <p class="hero-subtitle"><span class='text-primary'><</span> <span class="typed" data-typed-items="{{ user.fields }}"></span> <span class='text-primary'>></span></p>
+          <!-- <p class="pt-3"><a class="btn btn-primary btn js-scroll px-4" href="#about" role="button">Learn More</a></p> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about-mf sect-pt4 route">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="box-shadow-full">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="row">
+                    <div class="col-sm-6 col-md-5">
+                      <div class="about-img">
+                        <a href="{{ user.image.url }}" data-gallery="portfolioGallery" class="portfolio-lightbox">
+                          <img src="{{ user.image.url }}" alt="{{ user.full_name  }}" title="{{ user.full_name  }}" class="img-fluid rounded b-shadow-a">
+                        </a>
+                      </div>
+                    </div>
+                    <div class="col-sm-6 col-md-7">
+                      <div class="about-info">
+                        <p><span class="title-s">Name: </span> <span><a href="{% url 'profile' %}">{{ user.full_name  }}</a></span></p>
+                        <p><span class="title-s">Profile: </span> <span>{{ user.level }}</span></p>
+                        <p><span class="title-s">Email: </span> <span>{{ user.email }}</span></p>
+                        <p><span class="title-s">Phone: </span> <span>{{ user.phone_number }}</span></p>
+                      </div>
+                    </div>
+                  </div>
+                  <h6 class="ms-5" style="margin-top: -20px;"><a href="{% url 'profile' %}">Visit Profile <i class="bi bi-person-badge"></i></a></h6>
+                  <div class="skill-mf">
+                    <p class="title-s">Skill</p>
+                    {% for skill in skills %}
+                    <span>{{ skill.title }}</span> <span class="pull-right">{{ skill.protsent }}%</span>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: {{ skill.protsent }}%;" aria-valuenow="{{ skill.protsent }}" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    {% endfor %}
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="about-me pt-4 pt-md-0">
+                    <div class="title-box-2">
+                      <h5 class="title-left">
+                        <span class='text-primary'><</span> About me<span class='text-primary'>></span>
+                      </h5>
+                    </div>
+                    <p class="lead">
+                      {{ user.bio }}
+                    </p>
+                  </div>
+                  <div class="title-box-2">
+                    <h5 class="title-left mt-5">
+                      <span class='text-primary'><</span> /About me <span class='text-primary'>></span>
+                    </h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services-mf pt-5 route">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="title-box text-center">
+              <h3 class="title-a">
+                <span class='text-primary'><</span> Services<span class='text-primary'>></span>
+              </h3>
+              <p class="subtitle-a">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              </p>
+              <div class="line-mf"></div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          {% for service in services %}
+          <div class="col-md-4">
+            <div class="service-box">
+              <div class="service-ico">
+                <span class="ico-circle"><i class="{{ service.icon }}"></i></span>
+              </div>
+              <div class="service-content">
+                <h2 class="s-title">{{ service.title }}</h2>
+                <p class="s-description text-center">
+                  {{ service.description }}
+                </p>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        <div class="title-box text-center">
+          <h3 class="title-a">
+            <span class='text-primary'><</span> /Services<span class='text-primary'>></span>
+          </h3>
+          <div class="line-mf"></div>
+        </div>
+      </div>
+    </section><!-- End Services Section -->
+
+    <!-- ======= Counter Section ======= -->
+    <div class="section-counter paralax-mf bg-image" style="background-image: url({% static 'assets/img/counters-bg.jpg' %})">
+      <div class="overlay-mf"></div>
+      <div class="container position-relative">
+        <div class="row">
+          <div class="col-sm-3 col-lg-3">
+            <div class="counter-box counter-box pt-4 pt-md-0">
+              <div class="counter-ico">
+                <span class="ico-circle"><i class="bi bi-check"></i></span>
+              </div>
+              <div class="counter-num">
+                <p data-purecounter-start="0" data-purecounter-end="450" data-purecounter-duration="1" class="counter purecounter"></p>
+                <span class="counter-text">WORKS COMPLETED</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3 col-lg-3">
+            <div class="counter-box pt-4 pt-md-0">
+              <div class="counter-ico">
+                <span class="ico-circle"><i class="bi bi-journal-richtext"></i></span>
+              </div>
+              <div class="counter-num">
+                <p data-purecounter-start="0" data-purecounter-end="25" data-purecounter-duration="1" class="counter purecounter"></p>
+                <span class="counter-text">YEARS OF EXPERIENCE</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3 col-lg-3">
+            <div class="counter-box pt-4 pt-md-0">
+              <div class="counter-ico">
+                <span class="ico-circle"><i class="bi bi-people"></i></span>
+              </div>
+              <div class="counter-num">
+                <p data-purecounter-start="0" data-purecounter-end="550" data-purecounter-duration="1" class="counter purecounter"></p>
+                <span class="counter-text">TOTAL CLIENTS</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3 col-lg-3">
+            <div class="counter-box pt-4 pt-md-0">
+              <div class="counter-ico">
+                <span class="ico-circle"><i class="bi bi-award"></i></span>
+              </div>
+              <div class="counter-num">
+                <p data-purecounter-start="0" data-purecounter-end="48" data-purecounter-duration="1" class="counter purecounter"></p>
+                <span class="counter-text">AWARD WON</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- End Counter Section -->
+
+    <!-- ======= Portfolio Section ======= -->
+    <section id="work" class="portfolio-mf sect-pt4 route">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="title-box text-center">
+              <h3 class="title-a">
+                <span class='text-primary'><</span> Portfolio<span class='text-primary'>></span>
+              </h3>
+              <p class="subtitle-a">
+                Web sayt va telegram bot bo'yicha portfoliolar.
+              </p>
+              <div class="line-mf"></div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          {% for portfolio in portfolios %}
+          <div class="col-md-4">
+            <div class="work-box">
+              <a href="{{ portfolio.image.url }}" data-gallery="portfolioGallery" class="portfolio-lightbox">
+                <div class="work-img">
+                  <img src="{{ portfolio.image.url }}" alt="" class="img-fluid">
+                </div>
+              </a>
+              <div class="work-content">
+                <div class="row">
+                  <div class="col-sm-8">
+                    <h2 class="w-title">{{ portfolio.title }}</h2>
+                    <div class="w-more">
+                      <span class="w-ctegory">{{ portfolio.category }}</span> / <span class="w-date">{{ portfolio.updated.date }}</span>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="w-like">
+                      <a href="{% url 'portfolio' portfolio.id %}"> <span class="bi bi-plus-circle"></span></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        <div class="title-box text-center">
+          <h3 class="title-a">
+            <span class='text-primary'><</span> /Portfolio<span class='text-primary'>></span>
+          </h3>
+          <div class="line-mf"></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="testimonials paralax-mf bg-image" style="background-image: url({% static 'assets/img/overlay-bg.jpg' %})">
+      <div class="overlay-mf"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+
+            <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+              <div class="swiper-wrapper">
+                {% for feedback in feedbacks %}
+                <div class="swiper-slide">
+                  <div class="testimonial-box">
+                    <div class="author-test">
+                      <img src="{{ feedback.image.url }}" alt="{{ feedback.full_name }}" title="{{ feedback.full_name }}" class="rounded-circle b-shadow-a">
+                      <span class="author">{{ feedback.full_name }}</span>
+                      <!-- {% if feedback.email %}
+                      <h5>{{ feedback.email }}</h5>
+                      {% endif %} -->
+                      <h5>{{ feedback.field }}</h5>
+                    </div>
+                    <div class="content-test">
+                      <p class="description lead">
+                        {{ feedback.feedback }}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+
+            <!-- <div id="testimonial-mf" class="owl-carousel owl-theme"></div> -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======= Blog Section ======= -->
+    <section id="blog" class="blog-mf sect-pt4 route">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="title-box text-center">
+              <h3 class="title-a">
+                <a href="{% url 'all_posts' %}"><span class='text-primary'><</span> Blog<span class='text-primary'>></span></a>
+              </h3>
+              <p class="subtitle-a">
+                Jahongir Ibragimovning shaxsiy blogidan
+              </p>
+              <div class="line-mf"></div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          {% for post in posts %}
+          <div class="col-md-4">
+            <div class="card card-blog">
+              <div class="card-img">
+                <a href="{% url 'post' post.id %}"><img src="{{ post.image.url }}" alt="{{ post.title }}" title="{{ post.title }}" class="img-fluid"></a>
+              </div>
+              <div class="card-body">
+                <div class="card-category-box">
+                  <div class="card-category">
+                    <h6 class="category">{{ post.category }}</h6>
+                  </div>
+                </div>
+                <h3 class="card-title"><a href="{% url 'post' post.id %}">{{ post.title }}</a></h3>
+                <p class="card-description">
+                  {{ post.content|truncatewords:10 }}
+                </p>
+              </div>
+              <div class="card-footer">
+                <div class="post-author">
+                  <a href="{% url 'profile' %}">
+                    <img src="{{ post.author.image.url }}" alt="{{ post.author.full_name }}" title="{{ post.author.full_name }}" class="avatar rounded-circle">
+                    <span class="author">{{ post.author.full_name }}</span>
+                  </a>
+                </div>
+                <div class="post-date">
+                  <span class="bi bi-clock"></span> {{ post.updated.date }}
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+          <div class="title-box text-center">
+            <h3 class="title-a">
+              <a href="{% url 'all_posts' %}"><span class='text-primary'><</span> /Blog<span class='text-primary'>></span></a>
+            </h3>
+            <div class="line-mf"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="paralax-mf footer-paralax bg-image sect-mt4 route" style="background-image: url({% static 'assets/img/overlay-bg.jpg' %})">
+      <div class="overlay-mf"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="contact-mf">
+              <div id="contact" class="box-shadow-full">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="title-box-2">
+                      <h5 class="title-left">
+                        <span class='text-primary'><</span> Send Message Us <span class='text-primary'>></span>
+                      </h5>
+                    </div>
+                    <div>
+                      <form method="post" role="form">
+                        {% csrf_token %}
+                        <div class="row">
+                          <div class="col-md-12 mb-3">
+                            <div class="form-group">
+                              <input type="text" name="full_name" class="form-control" id="name" placeholder="Your Name" required>
+                            </div>
+                          </div>
+                          <div class="col-md-12 mb-3">
+                            <div class="form-group">
+                              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                            </div>
+                          </div>
+                          <div class="col-md-12 mb-3">
+                            <div class="form-group">
+                              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject: for example, advertising" required>
+                            </div>
+                          </div>
+                          <div class="col-md-12">
+                            <div class="form-group">
+                              <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                            </div>
+                          </div>
+                          <div class="col-md-12 text-center mt-3">
+                            <button type="submit" class="button button-a button-big button-rouded">Send Message</button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="title-box-2">
+                      <h5 class="title-left mt-2">
+                        <span class='text-primary'><</span> /Send Message Us <span class='text-primary'>></span>
+                      </h5>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="title-box-2 pt-4 pt-md-0">
+                      <h5 class="title-left">
+                        <span class='text-primary'><</span> Get in Touch<span class='text-primary'>></span>
+                      </h5>
+                    </div>
+                    <div class="more-info">
+                      <p class="lead">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis dolorum dolorem soluta quidem
+                        expedita aperiam aliquid at.
+                        Totam magni ipsum suscipit amet? Autem nemo esse laboriosam ratione nobis
+                        mollitia inventore?
+                      </p>
+                      <ul class="list-ico">
+                        <li><span class="bi bi-geo-alt"></span> {{ user.address }}</li>
+                        <li><span class="bi bi-phone"></span> {{ user.phone_number }}</li>
+                        <li><span class="bi bi-envelope"></span> {{ user.email }}</li>
+                      </ul>
+                    </div>
+                    <div class="socials">
+                      <ul>
+                        {% for social in socials %}
+                        <li><a href="{{ social.link }}"><span class="ico-circle"><i class="{{ social.icon }}"></i></span></a></li>
+                        {% endfor %}
+                      </ul>
+                    </div>
+                    <div class="title-box-2 pt-4 pt-md-0">
+                      <h5 class="title-left mt-5">
+                        <span class='text-primary'><</span> /Get in Touch<span class='text-primary'>></span>
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+{% endblock %}

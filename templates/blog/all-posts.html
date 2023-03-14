@@ -1,0 +1,801 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Site Metas -->
+    <title>Cho'girmali Blog</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/solid.min.css" integrity="sha512-bdTSJB23zykBjGDvyuZUrLhHD0Rfre0jxTd0/jpTbV7sZL8DCth/88aHX0bq2RV8HK3zx5Qj6r2rRU/Otsjk+g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Design fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet"> 
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'posts_assets/css/bootstrap.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+    <!-- FontAwesome Icons core CSS -->
+    <link href="{% static 'posts_assets/css/font-awesome.min.css' %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'posts_assets/style.css' %}" rel="stylesheet">
+
+    <!-- Responsive styles for this template -->
+    <link href="{% static 'posts_assets/css/responsive.css' %}" rel="stylesheet">
+
+    <!-- Colors for this template -->
+    <link href="{% static 'posts_assets/css/colors.css' %}" rel="stylesheet">
+
+    <!-- Version Tech CSS for this template -->
+    <link href="{% static 'posts_assets/css/version/tech.css' %}" rel="stylesheet">
+
+    <!-- [if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif] -->
+
+    <style>
+        .img-fluid {
+            max-width: 440px;
+            max-height: 500px;
+        }
+
+        .masonry-box {
+            max-width: 440px;
+            max-height: 500px;
+        }
+
+        .first-slot {
+            max-width: 440px;
+            max-height: 500px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div id="wrapper">
+        <header class="tech-header header">
+            <div class="container-fluid">
+                <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+                    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <a class="navbar-brand" href="{% url 'index' %}">Cho'girmali Blog</a>
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <ul class="navbar-nav mr-auto">
+
+                            <!-- <li class="nav-item dropdown has-submenu menu-large hidden-md-down hidden-sm-down hidden-xs-down">
+                                <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">News</a>
+                                <ul class="dropdown-menu megamenu" aria-labelledby="dropdown01">
+                                    <li>
+                                        <div class="container">
+                                            <div class="mega-menu-content clearfix">
+                                                <div class="tab">
+                                                    <button class="tablinks active" onclick="openCategory(event, 'cat01')">Science</button>
+                                                    <button class="tablinks" onclick="openCategory(event, 'cat02')">Technology</button>
+                                                    <button class="tablinks" onclick="openCategory(event, 'cat03')">Social Media</button>
+                                                    <button class="tablinks" onclick="openCategory(event, 'cat04')">Car News</button>
+                                                    <button class="tablinks" onclick="openCategory(event, 'cat05')">Worldwide</button>
+                                                </div>
+
+                                                <div class="tab-details clearfix">
+                                                    <div id="cat01" class="tabcontent active">
+                                                        <div class="row">
+                                                            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                                                <div class="blog-box">
+                                                                    <div class="post-media">
+                                                                        <a href="tech-single.html" title="">
+                                                                            <img src="upload/tech_menu_01.jpg" alt="" class="img-fluid">
+                                                                            <div class="hovereffect">
+                                                                            </div>
+                                                                            <span class="menucat">Science</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="blog-meta">
+                                                                        <h4><a href="tech-single.html" title="">Top 10+ care advice for your toenails</a></h4>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                                                <div class="blog-box">
+                                                                    <div class="post-media">
+                                                                        <a href="tech-single.html" title="">
+                                                                            <img src="upload/tech_menu_02.jpg" alt="" class="img-fluid">
+                                                                            <div class="hovereffect">
+                                                                            </div>
+                                                                            <span class="menucat">Science</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="blog-meta">
+                                                                        <h4><a href="tech-single.html" title="">The secret of your beauty is handmade soap</a></h4>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                                                <div class="blog-box">
+                                                                    <div class="post-media">
+                                                                        <a href="tech-single.html" title="">
+                                                                            <img src="upload/tech_menu_03.jpg" alt="" class="img-fluid">
+                                                                            <div class="hovereffect">
+                                                                            </div>
+                                                                            <span class="menucat">Science</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="blog-meta">
+                                                                        <h4><a href="tech-single.html" title="">Benefits of face mask made from mud</a></h4>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                                                <div class="blog-box">
+                                                                    <div class="post-media">
+                                                                        <a href="tech-single.html" title="">
+                                                                            <img src="upload/tech_menu_04.jpg" alt="" class="img-fluid">
+                                                                            <div class="hovereffect">
+                                                                            </div>
+                                                                            <span class="menucat">Science</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="blog-meta">
+                                                                        <h4><a href="tech-single.html" title="">Relax with the unique warmth of candle flavor</a></h4>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="cat02" class="tabcontent">
+                                                        <div class="row">
+                                                            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                                                <div class="blog-box">
+                                                                    <div class="post-media">
+                                                                        <a href="tech-single.html" title="">
+                                                                            <img src="upload/tech_menu_05.jpg" alt="" class="img-fluid">
+                                                                            <div class="hovereffect">
+                                                                            </div>
+                                                                            <span class="menucat">Technology</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="blog-meta">
+                                                                        <h4><a href="tech-single.html" title="">2017 summer stamp will have design models here</a></h4>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                                                <div class="blog-box">
+                                                                    <div class="post-media">
+                                                                        <a href="tech-single.html" title="">
+                                                                            <img src="upload/tech_menu_06.jpg" alt="" class="img-fluid">
+                                                                            <div class="hovereffect">
+                                                                            </div>
+                                                                            <span class="menucat">Technology</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="blog-meta">
+                                                                        <h4><a href="tech-single.html" title="">Which color is the most suitable color for you?</a></h4>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                                                <div class="blog-box">
+                                                                    <div class="post-media">
+                                                                        <a href="tech-single.html" title="">
+                                                                            <img src="upload/tech_menu_07.jpg" alt="" class="img-fluid">
+                                                                            <div class="hovereffect">
+                                                                            </div>
+                                                                            <span class="menucat">Technology</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="blog-meta">
+                                                                        <h4><a href="tech-single.html" title="">Subscribe to these sites to keep an eye on the fashion</a></h4>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                                                <div class="blog-box">
+                                                                    <div class="post-media">
+                                                                        <a href="tech-single.html" title="">
+                                                                            <img src="upload/tech_menu_08.jpg" alt="" class="img-fluid">
+                                                                            <div class="hovereffect">
+                                                                            </div>
+                                                                            <span class="menucat">Technology</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="blog-meta">
+                                                                        <h4><a href="tech-single.html" title="">The most trends of this year with color combination</a></h4>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="cat03" class="tabcontent">
+                                                        <div class="row">
+                                                            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                                                <div class="blog-box">
+                                                                    <div class="post-media">
+                                                                        <a href="tech-single.html" title="">
+                                                                            <img src="upload/tech_menu_09.jpg" alt="" class="img-fluid">
+                                                                            <div class="hovereffect">
+                                                                            </div>
+                                                                            <span class="menucat">Social Media</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="blog-meta">
+                                                                        <h4><a href="tech-single.html" title="">I visited the architects of Istanbul for you</a></h4>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                                                <div class="blog-box">
+                                                                    <div class="post-media">
+                                                                        <a href="tech-single.html" title="">
+                                                                            <img src="upload/tech_menu_10.jpg" alt="" class="img-fluid">
+                                                                            <div class="hovereffect">
+                                                                            </div>
+                                                                            <span class="menucat">Social Media</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="blog-meta">
+                                                                        <h4><a href="tech-single.html" title="">Prepared handmade dish dish in the Netherlands</a></h4>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                                                <div class="blog-box">
+                                                                    <div class="post-media">
+                                                                        <a href="tech-single.html" title="">
+                                                                            <img src="upload/tech_menu_11.jpg" alt="" class="img-fluid">
+                                                                            <div class="hovereffect">
+                                                                            </div>
+                                                                            <span class="menucat">Social Media</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="blog-meta">
+                                                                        <h4><a href="tech-single.html" title="">I recommend you visit the fairy chimneys</a></h4>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                                                <div class="blog-box">
+                                                                    <div class="post-media">
+                                                                        <a href="tech-single.html" title="">
+                                                                            <img src="upload/tech_menu_12.jpg" alt="" class="img-fluid">
+                                                                            <div class="hovereffect">
+                                                                            </div>
+                                                                            <span class="menucat">Social Media</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="blog-meta">
+                                                                        <h4><a href="tech-single.html" title="">One of the most beautiful ports in the world</a></h4>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="cat04" class="tabcontent">
+                                                        <div class="row">
+                                                            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                                                <div class="blog-box">
+                                                                    <div class="post-media">
+                                                                        <a href="tech-single.html" title="">
+                                                                            <img src="upload/tech_menu_13.jpg" alt="" class="img-fluid">
+                                                                            <div class="hovereffect">
+                                                                            </div>
+                                                                            <span class="menucat">Car News</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="blog-meta">
+                                                                        <h4><a href="tech-single.html" title="">A collection of the most beautiful shop designs</a></h4>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                                                <div class="blog-box">
+                                                                    <div class="post-media">
+                                                                        <a href="tech-single.html" title="">
+                                                                            <img src="upload/tech_menu_14.jpg" alt="" class="img-fluid">
+                                                                            <div class="hovereffect">
+                                                                            </div>
+                                                                            <span class="menucat">Car News</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="blog-meta">
+                                                                        <h4><a href="tech-single.html" title="">America's and Canada's most beautiful wine houses</a></h4>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                                                <div class="blog-box">
+                                                                    <div class="post-media">
+                                                                        <a href="tech-single.html" title="">
+                                                                            <img src="upload/tech_menu_15.jpg" alt="" class="img-fluid">
+                                                                            <div class="hovereffect">
+                                                                            </div>
+                                                                            <span class="menucat">Car News</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="blog-meta">
+                                                                        <h4><a href="tech-single.html" title="">The most professional ways to color your walls</a></h4>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                                                <div class="blog-box">
+                                                                    <div class="post-media">
+                                                                        <a href="tech-single.html" title="">
+                                                                            <img src="upload/tech_menu_16.jpg" alt="" class="img-fluid">
+                                                                            <div class="hovereffect">
+                                                                            </div>
+                                                                            <span class="menucat">Car News</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="blog-meta">
+                                                                        <h4><a href="tech-single.html" title="">Stylish cabinet designs and furnitures</a></h4>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="cat05" class="tabcontent">
+                                                        <div class="row">
+                                                            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                                                <div class="blog-box">
+                                                                    <div class="post-media">
+                                                                        <a href="tech-single.html" title="">
+                                                                            <img src="upload/tech_menu_17.jpg" alt="" class="img-fluid">
+                                                                            <div class="hovereffect">
+                                                                            </div>
+                                                                            <span class="menucat">Worldwide</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="blog-meta">
+                                                                        <h4><a href="tech-single.html" title="">Grilled vegetable with fish prepared with fish</a></h4>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                                                <div class="blog-box">
+                                                                    <div class="post-media">
+                                                                        <a href="tech-single.html" title="">
+                                                                            <img src="upload/tech_menu_18.jpg" alt="" class="img-fluid">
+                                                                            <div class="hovereffect">
+                                                                            </div>
+                                                                            <span class="menucat">Worldwide</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="blog-meta">
+                                                                        <h4><a href="tech-single.html" title="">The world's finest and clean meat restaurants</a></h4>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                                                <div class="blog-box">
+                                                                    <div class="post-media">
+                                                                        <a href="tech-single.html" title="">
+                                                                            <img src="upload/tech_menu_19.jpg" alt="" class="img-fluid">
+                                                                            <div class="hovereffect">
+                                                                            </div>
+                                                                            <span class="menucat">Worldwide</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="blog-meta">
+                                                                        <h4><a href="tech-single.html" title="">Fried veal and vegetable dish</a></h4>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                                                <div class="blog-box">
+                                                                    <div class="post-media">
+                                                                        <a href="tech-single.html" title="">
+                                                                            <img src="upload/tech_menu_20.jpg" alt="" class="img-fluid">
+                                                                            <div class="hovereffect">
+                                                                            </div>
+                                                                            <span class="menucat">Worldwide</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="blog-meta">
+                                                                        <h4><a href="tech-single.html" title="">Tasty pasta sauces and recipes</a></h4>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li> -->
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'all_posts' %}">Home</a>
+                            </li>                   
+                            <li class="nav-item">
+                                <a class="nav-link" href="tech-category-02.html">Videos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="tech-category-03.html">Reviews</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="tech-contact.html">Contact Us</a>
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav mr-2">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><i class="fa fa-rss"></i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><i class="fa fa-android"></i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><i class="fa fa-apple"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <section class="section first-section">
+            <div class="container-fluid">
+                <div class="masonry-blog clearfix">
+                    {% for post in recent_posts %}
+                    <div class="first-slot">
+                        <div class="masonry-box post-media">
+                             <img src="{{ post.image.url }}" alt="{{ post.title }}" title="{{ post.title }}" class="img-fluid">
+                             <div class="shadoweffect">
+                                <div class="shadow-desc">
+                                    <div class="blog-meta">
+                                        <span class="bg-orange"><a href="{% url 'post' post.id %}" title="{{ post.category }}">{{ post.category }}</a></span>
+                                        <h4><a href="{% url 'post' post.id %}" title="{{ post.title }}">{{ post.title|truncatewords:2 }}</a></h4>
+                                        <small><a href="{% url 'post' post.id %}" title="{{ post.title }}">{{ post.updated.date }}</a></small>
+                                        <small><a href="{% url 'profile' %}" title="{{ post.author.full_name }}">{{ post.author.full_name }}</a></small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    
+                    <!-- <div class="first-slot">
+                        <div class="masonry-box post-media">
+                             <img src="upload/tech_01.jpg" alt="" class="img-fluid">
+                             <div class="shadoweffect">
+                                <div class="shadow-desc">
+                                    <div class="blog-meta">
+                                        <span class="bg-orange"><a href="tech-category-01.html" title="">Technology</a></span>
+                                        <h4><a href="tech-single.html" title="">Say hello to real handmade office furniture! Clean & beautiful design</a></h4>
+                                        <small><a href="tech-single.html" title="">24 July, 2017</a></small>
+                                        <small><a href="tech-author.html" title="">by Amanda</a></small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="second-slot">
+                        <div class="masonry-box post-media">
+                             <img src="upload/tech_02.jpg" alt="" class="img-fluid">
+                             <div class="shadoweffect">
+                                <div class="shadow-desc">
+                                    <div class="blog-meta">
+                                        <span class="bg-orange"><a href="tech-category-01.html" title="">Gadgets</a></span>
+                                        <h4><a href="tech-single.html" title="">Do not make mistakes when choosing web hosting</a></h4>
+                                        <small><a href="tech-single.html" title="">03 July, 2017</a></small>
+                                        <small><a href="tech-author.html" title="">by Jessica</a></small>
+                                    </div>
+                                </div>
+                             </div>
+                        </div>
+                    </div>
+
+                    <div class="last-slot">
+                        <div class="masonry-box post-media">
+                             <img src="upload/tech_03.jpg" alt="" class="img-fluid">
+                             <div class="shadoweffect">
+                                <div class="shadow-desc">
+                                    <div class="blog-meta">
+                                        <span class="bg-orange"><a href="tech-category-01.html" title="">Technology</a></span>
+                                        <h4><a href="tech-single.html" title="">The most reliable Galaxy Note 8 images leaked</a></h4>
+                                        <small><a href="tech-single.html" title="">01 July, 2017</a></small>
+                                        <small><a href="tech-author.html" title="">by Jessica</a></small>
+                                    </div>
+                                </div>
+                             </div>
+                        </div>
+                    </div> -->
+
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+                        <div class="page-wrapper">
+                            <div class="blog-top clearfix">
+                                <h4 class="pull-left">Recent Posts <i class="fa fa-rss"></i></h4>
+                            </div>
+
+                            <div class="blog-list clearfix">
+                                {% for post in posts %}
+                                <div class="blog-box row">
+                                    <div class="col-md-4">
+                                        <div class="post-media">
+                                            <a href="{% url 'post' post.id %}" title="{{ post.title }}">
+                                                <img src="{{ post.image.url }}" alt="{{ post.title }}" title="{{ post.title }}" class="img-fluid">
+                                                <div class="hovereffect"></div>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="blog-meta big-meta col-md-8">
+                                        <h4><a href="{% url 'post' post.id %}" title="{{ post.title }}">{{ post.title }}</a></h4>
+                                        <p>{{ post.content|truncatewords:20 }}</p>
+                                        <small class="firstsmall"><a class="bg-orange" href="#" title="{{ post.category }}">{{ post.category }}</a></small>
+                                        <small><a href="#" title="">{{ post.updated.date }}</a></small>
+                                        <small><a href="{% url 'profile' %}" title="">{{ post.author.full_name }}</a></small>
+                                        <small><a href="{% url 'post' post.id %}" title="Comments"><i class="fa fa-comments" aria-hidden="true"></i> {{ post.comments.count }}</a></small>
+                                    </div>
+                                </div>
+
+                                <hr class="invis">
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                        <hr class="invis">
+
+                        {% include 'pagination.html' with page=posts %}
+                    </div>
+
+                    <!-- <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+                        <div class="sidebar">
+                            <div class="widget">
+                                <div class="banner-spot clearfix">
+                                    <div class="banner-img">
+                                        <img src="upload/banner_07.jpg" alt="" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="widget">
+                                <h2 class="widget-title">Trend Videos</h2>
+                                <div class="trend-videos">
+                                    <div class="blog-box">
+                                        <div class="post-media">
+                                            <a href="tech-single.html" title="">
+                                                <img src="upload/tech_video_01.jpg" alt="" class="img-fluid">
+                                                <div class="hovereffect">
+                                                    <span class="videohover"></span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="blog-meta">
+                                            <h4><a href="tech-single.html" title="">We prepared the best 10 laptop presentations for you</a></h4>
+                                        </div>
+                                    </div>
+
+                                    <hr class="invis">
+
+                                    <div class="blog-box">
+                                        <div class="post-media">
+                                            <a href="tech-single.html" title="">
+                                                <img src="upload/tech_video_02.jpg" alt="" class="img-fluid">
+                                                <div class="hovereffect">
+                                                    <span class="videohover"></span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="blog-meta">
+                                            <h4><a href="tech-single.html" title="">We are guests of ABC Design Studio - Vlog</a></h4>
+                                        </div>
+                                    </div>
+
+                                    <hr class="invis">
+
+                                    <div class="blog-box">
+                                        <div class="post-media">
+                                            <a href="tech-single.html" title="">
+                                                <img src="upload/tech_video_03.jpg" alt="" class="img-fluid">
+                                                <div class="hovereffect">
+                                                    <span class="videohover"></span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="blog-meta">
+                                            <h4><a href="tech-single.html" title="">Both blood pressure monitor and intelligent clock</a></h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="widget">
+                                <h2 class="widget-title">Popular Posts</h2>
+                                <div class="blog-list-widget">
+                                    <div class="list-group">
+                                        <a href="tech-single.html" class="list-group-item list-group-item-action flex-column align-items-start">
+                                            <div class="w-100 justify-content-between">
+                                                <img src="upload/tech_blog_08.jpg" alt="" class="img-fluid float-left">
+                                                <h5 class="mb-1">5 Beautiful buildings you need..</h5>
+                                                <small>12 Jan, 2016</small>
+                                            </div>
+                                        </a>
+
+                                        <a href="tech-single.html" class="list-group-item list-group-item-action flex-column align-items-start">
+                                            <div class="w-100 justify-content-between">
+                                                <img src="upload/tech_blog_01.jpg" alt="" class="img-fluid float-left">
+                                                <h5 class="mb-1">Let's make an introduction for..</h5>
+                                                <small>11 Jan, 2016</small>
+                                            </div>
+                                        </a>
+
+                                        <a href="tech-single.html" class="list-group-item list-group-item-action flex-column align-items-start">
+                                            <div class="w-100 last-item justify-content-between">
+                                                <img src="upload/tech_blog_03.jpg" alt="" class="img-fluid float-left">
+                                                <h5 class="mb-1">Did you see the most beautiful..</h5>
+                                                <small>07 Jan, 2016</small>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="widget">
+                                <h2 class="widget-title">Recent Reviews</h2>
+                                <div class="blog-list-widget">
+                                    <div class="list-group">
+                                        <a href="tech-single.html" class="list-group-item list-group-item-action flex-column align-items-start">
+                                            <div class="w-100 justify-content-between">
+                                                <img src="upload/tech_blog_02.jpg" alt="" class="img-fluid float-left">
+                                                <h5 class="mb-1">Banana-chip chocolate cake recipe..</h5>
+                                                <span class="rating">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </span>
+                                            </div>
+                                        </a>
+
+                                        <a href="tech-single.html" class="list-group-item list-group-item-action flex-column align-items-start">
+                                            <div class="w-100 justify-content-between">
+                                                <img src="upload/tech_blog_03.jpg" alt="" class="img-fluid float-left">
+                                                <h5 class="mb-1">10 practical ways to choose organic..</h5>
+                                                <span class="rating">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </span>
+                                            </div>
+                                        </a>
+
+                                        <a href="tech-single.html" class="list-group-item list-group-item-action flex-column align-items-start">
+                                            <div class="w-100 last-item justify-content-between">
+                                                <img src="upload/tech_blog_07.jpg" alt="" class="img-fluid float-left">
+                                                <h5 class="mb-1">We are making homemade ravioli..</h5>
+                                                <span class="rating">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="widget">
+                                <h2 class="widget-title">Follow Us</h2>
+
+                                <div class="row text-center">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                        <a href="#" class="social-button facebook-button">
+                                            <i class="fa fa-facebook"></i>
+                                            <p>27k</p>
+                                        </a>
+                                    </div>
+
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                        <a href="#" class="social-button twitter-button">
+                                            <i class="fa fa-twitter"></i>
+                                            <p>98k</p>
+                                        </a>
+                                    </div>
+
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                        <a href="#" class="social-button google-button">
+                                            <i class="fa fa-google-plus"></i>
+                                            <p>17k</p>
+                                        </a>
+                                    </div>
+
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                        <a href="#" class="social-button youtube-button">
+                                            <i class="fa fa-youtube"></i>
+                                            <p>22k</p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 offset-2">
+                        <div class="widget">
+                            <div class="footer-text text-center">
+                                <a href="{% url 'index' %}">Cho'girmali blog</a>
+                                <p>Sayt bo'ylab sayohatingiz maroqli o'tsin!</p>
+                                <div class="social">
+                                    {% for social in socials %}
+                                    <a href="{{ social.link }}" data-toggle="tooltip" data-placement="bottom" title="{{ social.title }}"><i class="{{ social.icon }}"></i></a>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <br>
+                        <div class="copyright">
+                            &copy; Design by <a href="http://html.design">HTML Design</a>.
+                            &copy; Backend by <a href="{% url 'profile' %}">Cho'girmali yigit</a>.
+                        </div>
+                    </div>
+                </div>
+            </div><!-- end container -->
+        </footer><!-- end footer -->
+
+        <div class="dmtop">Scroll to Top</div>
+        
+    </div><!-- end wrapper -->
+
+    <!-- Core JavaScript
+    ================================================== -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/tether.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/custom.js"></script>
+
+</body>
+</html>
