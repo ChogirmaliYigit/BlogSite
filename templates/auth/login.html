@@ -1,12 +1,14 @@
-{% extends 'base.html' %}
+{% extends 'base-login-admin.html' %}
+
 {% load crispy_forms_tags %}
 
-{% block title %} Login User {% endblock title %}
+{% block title %} Login Admin {% endblock title %}
 
 {% block content %}
 
 <div class="col-md-4 offset-4 my-5">
-    <h1 class="text-center text-primary my-5">Login User</h1>
+    <h1 class="text-center text-primary my-5">Login Admin</h1>
+    <p>Please, checking your email, We're sent PIN to your email({{ data.email }}). Enter the latest PIN from your email.</p>
     <form action="" method="post">
         {% csrf_token %}
         {{ form|crispy }}

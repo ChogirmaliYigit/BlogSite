@@ -1,0 +1,9 @@
+{% autoescape off %}
+Hello {{ email }},
+
+Your pin: {{ pin }}
+
+Sincerely,
+The Cho'girmali Blog
+
+{% endautoescape %}

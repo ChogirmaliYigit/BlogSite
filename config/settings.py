@@ -29,8 +29,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # External apps
     'rest_framework',
-    'phonenumber_field',
-    'django_seed',
     "crispy_forms",
     "crispy_bootstrap5",
     # My apps
@@ -144,3 +142,10 @@ MESSAGE_TAGS = {
     messages.WARNING: 'alert-warning',
     messages.ERROR: 'alert-danger',
 }
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_POST = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'chogirmali.yigit13@gmail.com'
+EMAIL_HOST_PASSWORD = 'jjcvghfhwutftyvx'

@@ -251,9 +251,10 @@
             {% for feedback in feedbacks %}
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="{{ feedback.image.url }}" class="testimonial-img" alt="{{ feedback.full_name }}" title="{{ feedback.full_name }}">
-                <h3>{{ feedback.full_name }}</h3>
-                <h4>{{ feedback.field }}</h4>
+
+                <img src="{{ feedback.image_feedback.url }}" class="testimonial-img" alt="{{ feedback.full_name_feedback }}" title="{{ feedback.full_name_feedback }}">
+                <h3>{{ feedback.full_name_feedback }}</h3>
+                <h4>{{ feedback.field_feedback }}</h4>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                   {{ feedback.feedback }}

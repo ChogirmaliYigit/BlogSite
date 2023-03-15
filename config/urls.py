@@ -9,6 +9,7 @@ urlpatterns = [
     path('auth/', include('auth.urls')),
     path('main/', include('main.urls')),
     path('api/v1/', include('api.urls')),
+    path('api/auth/', include('rest_framework.urls')),
 ]
 
 if settings.DEBUG:

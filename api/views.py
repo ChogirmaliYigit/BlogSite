@@ -1,55 +1,18 @@
-from django.shortcuts import render
-from rest_framework.generics import GenericAPIView, ListCreateAPIView, RetrieveUpdateDestroyAPIView
-from main.serializers import CategorySerializer, FoodSerializer, OrderItemSerializer, OrderSerializer, ClientSerializer
-from main.models import Category, Food, Order, OrderItem, Client
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status
+from blog.models import Post
+from .serializers import PostSerializer, SocialLinkSerializer
 
+class PostsAPIView(APIView):
+    def get(self, request):
+        posts = Post.objects.all().order_by('-id').values()
+        serializer = PostSerializer(posts, many=True)
+        return Response(data=serializer.data)
 
-class CategoryCreateListView(ListCreateAPIView):
-    queryset = Category.objects.all()
-    serializer_class = CategorySerializer
-
-class CategoryRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
-    queryset = Category.objects.all()
-    serializer_class = CategorySerializer
-    lookup_field = 'pk'
-
-
-class FoodCreateListView(ListCreateAPIView):
-    queryset = Food.objects.all()
-    serializer_class = FoodSerializer
-
-class FoodRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
-    queryset = Food.objects.all()
-    serializer_class = FoodSerializer
-    lookup_field = 'pk'
-
-
-class OrderCreateListView(ListCreateAPIView):
-    queryset = Order.objects.all()
-    serializer_class = OrderSerializer
-
-class OrderRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
-    queryset = Order.objects.all()
-    serializer_class = OrderSerializer
-    lookup_field = 'pk'
-
-
-class OrderItemCreateListView(ListCreateAPIView):
-    queryset = OrderItem.objects.all()
-    serializer_class = OrderItemSerializer
-
-class OrderItemRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
-    queryset = OrderItem.objects.all()
-    serializer_class = OrderItemSerializer
-    lookup_field = 'pk'
-
-
-class ClientCreateListView(ListCreateAPIView):
-    queryset = Client.objects.all()
-    serializer_class = ClientSerializer
-
-class ClientRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
-    queryset = Client.objects.all()
-    serializer_class = ClientSerializer
-    lookup_field = 'pk'
-
+    def post(self, request):
+        data = request.data
+        serializer = PostSerializer(data=data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(data=serializer.data, status=status.HTTP_201_CREATED)

@@ -457,27 +457,14 @@
                             
                             <li class="nav-item">
                                 <a class="nav-link" href="{% url 'all_posts' %}">Home</a>
-                            </li>                   
-                            <li class="nav-item">
-                                <a class="nav-link" href="tech-category-02.html">Videos</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="tech-category-03.html">Reviews</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="tech-contact.html">Contact Us</a>
                             </li>
                         </ul>
                         <ul class="navbar-nav mr-2">
+                            {% for social in socials %}
                             <li class="nav-item">
-                                <a class="nav-link" href="#"><i class="fa fa-rss"></i></a>
+                                <a class="nav-link" href="{{ social.link }}" data-toggle="tooltip" data-placement="bottom" title="{{ social.title }}"><i class="{{ social.icon }}"></i></a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#"><i class="fa fa-android"></i></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#"><i class="fa fa-apple"></i></a>
-                            </li>
+                            {% endfor %}
                         </ul>
                     </div>
                 </nav>
@@ -805,12 +792,11 @@
                         </div>
                     </div>
                 </div>
-            </div><!-- end container -->
-        </footer><!-- end footer -->
+            </div>
+        </footer>
 
-        <div class="dmtop">Scroll to Top</div>
         
-    </div><!-- end wrapper -->
+    </div>
 
     <!-- Core JavaScript
     ================================================== -->

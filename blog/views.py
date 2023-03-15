@@ -2,9 +2,14 @@ from datetime import datetime
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import View
 from .models import Admin, SocialLink, Portfolio, Feedback, ContactUser, Post
-from .forms import ContactUserForm, CommentForm, ReplyForm, FeedbackForm
+from .forms import ContactUserForm, CommentForm, ReplyForm, FeedbackForm, LoginForm
 from django.contrib import messages
+from django.conf import settings
+from django.template.loader import render_to_string
+from django.core.mail import send_mail, BadHeaderError
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.http import HttpResponse
+from .generate_pin import generate
 
 class IndexPage(View):
     def get(self, request):
@@ -119,3 +124,29 @@ class AllPostsView(View):
 
     def post(self, request):
         pass
+
+class LoginAdmin(View):
+    def get(self, request):
+        form = LoginForm()
+        user = Admin.objects.first()
+        subject = "Login to Cho'girmali Blog as Admin"
+        email_template_name = 'auth/pin-for-admin-email.txt'
+        global data
+        data = {
+            'email': user.email,
+            'user': user,
+            'pin': generate()
+        }
+        message = render_to_string(email_template_name, data)
+        try:
+            send_mail(subject=subject, message=message, from_email=settings.EMAIL_HOST_USER, recipient_list=[user.email], fail_silently=False)
+        except BadHeaderError:
+            return HttpResponse('Invalid header found.')
+        return render(request=request, template_name='auth/login.html', context={'form': form, 'data': data})
+
+    def post(self, request):
+        pin = data.get('pin')
+        if pin == int(request.POST.get('pin')):
+            return redirect('index')
+        else:
+            return redirect('login_admin')

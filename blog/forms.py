@@ -21,3 +21,6 @@ class FeedbackForm(forms.ModelForm):
     class Meta:
         model = Feedback
         fields = ('full_name_feedback', 'image_feedback', 'email_feedback', 'field_feedback', 'feedback')
+
+class LoginForm(forms.Form):
+    pin = forms.CharField(max_length=50, min_length=6)
