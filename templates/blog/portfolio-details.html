@@ -61,9 +61,9 @@
                 <li><strong>Client</strong>: {{ portfolio.client }}</li>
                 <li><strong>Project date</strong>: {{ portfolio.updated }}</li>
                 {% if portfolio.url %}
-                <li><strong>Project URL</strong>: <a href="{{ portfolio.url }}">{{ portfolio.url }}</a></li>
+                  <li><strong>Project URL</strong>: <a href="{{ portfolio.url }}" target="_blank">{{ portfolio.url }}</a></li>
                 {% else %}
-                <li><strong>Project URL</strong>: {{ portfolio.url }}</li>
+                  <li><strong>Project URL</strong>: {{ portfolio.url }}</li>
                 {% endif %}
               </ul>
             </div>

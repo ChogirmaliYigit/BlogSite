@@ -1,5 +1,5 @@
 from django import forms
-from .models import ContactUser, Comment, Reply
+from .models import ContactUser, Comment, Reply, Feedback
 
 
 class ContactUserForm(forms.ModelForm):
@@ -16,3 +16,8 @@ class ReplyForm(forms.ModelForm):
     class Meta:
         model = Reply
         fields = '__all__'
+
+class FeedbackForm(forms.ModelForm):
+    class Meta:
+        model = Feedback
+        fields = ('full_name_feedback', 'image_feedback', 'email_feedback', 'field_feedback', 'feedback')

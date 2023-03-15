@@ -61,15 +61,15 @@ class Portfolio(models.Model):
         verbose_name_plural = 'Portfolioes'
 
 class Feedback(models.Model):
-    full_name = models.CharField(max_length=150, blank=True, null=True, default='Anonymous User')
-    email = models.EmailField(max_length=250, blank=True, null=True)
-    field = models.CharField(max_length=200, default='None')
-    feedback= models.TextField()
-    image = models.ImageField(upload_to='feedbacks/', null=True, blank=True, default='feedbacks/anonymous-user.jpg')
+    full_name_feedback = models.CharField(max_length=150, blank=True, null=True, default='Anonymous User')
+    email_feedback = models.EmailField(max_length=250, blank=True, null=True)
+    field_feedback = models.CharField(max_length=200, default='None')
+    feedback = models.TextField()
+    image_feedback = models.ImageField(upload_to='feedbacks/', null=True, blank=True, default='feedbacks/anonymous-user.jpg')
     show = models.BooleanField(default=False)
 
     def __str__(self) -> str:
-        return f'Feedback - {self.full_name}'
+        return f'Feedback - {self.full_name_feedback}'
 
 class Tag(models.Model):
     title = models.CharField(max_length=100)

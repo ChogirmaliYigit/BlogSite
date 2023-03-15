@@ -2,7 +2,7 @@ from datetime import datetime
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import View
 from .models import Admin, SocialLink, Portfolio, Feedback, ContactUser, Post
-from .forms import ContactUserForm, CommentForm, ReplyForm
+from .forms import ContactUserForm, CommentForm, ReplyForm, FeedbackForm
 from django.contrib import messages
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
@@ -33,7 +33,13 @@ class IndexPage(View):
         form = ContactUserForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request=request, message='Your message has been sent. Thank you!')
+            messages.success(request=request, message='Your Message has been sent. Thank you!')
+            return redirect('index')
+        
+        form = FeedbackForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request=request, message='Your Feedback has been sent. Thank you!')
             return redirect('index')
         return redirect('index')
 

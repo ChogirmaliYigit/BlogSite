@@ -51,6 +51,29 @@
       rel="stylesheet"
     />
     <link href="{% static 'assets_other/css/style.css' %}" rel="stylesheet" />
+    <style>
+      /* width */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      /* Track */
+      ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 20px black; 
+        border-radius: 0;
+      }
+      
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: blue; 
+        border-radius: 0;
+      }
+
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background: #0b00a7; 
+      }
+    </style>
   </head>
   <body>
     {% include 'navbar-profile.html' %}

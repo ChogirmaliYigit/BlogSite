@@ -243,12 +243,12 @@
                 <div class="swiper-slide">
                   <div class="testimonial-box">
                     <div class="author-test">
-                      <img src="{{ feedback.image.url }}" alt="{{ feedback.full_name }}" title="{{ feedback.full_name }}" class="rounded-circle b-shadow-a">
-                      <span class="author">{{ feedback.full_name }}</span>
-                      <!-- {% if feedback.email %}
-                      <h5>{{ feedback.email }}</h5>
+                      <img src="{{ feedback.image_feedback.url }}" alt="{{ feedback.full_name_feedback }}" title="{{ feedback.full_name_feedback }}" class="rounded-circle b-shadow-a">
+                      <span class="author">{{ feedback.full_name_feedback }}</span>
+                      <!-- {% if feedback.email_feedback %}
+                      <h5>{{ feedback.email_feedback }}</h5>
                       {% endif %} -->
-                      <h5>{{ feedback.field }}</h5>
+                      <h5>{{ feedback.field_feedback }}</h5>
                     </div>
                     <div class="content-test">
                       <p class="description lead">
@@ -260,8 +260,62 @@
                 {% endfor %}
               </div>
               <div class="swiper-pagination"></div>
+              <div class="col-md-6 offset-3 text-center">
+                <a href="" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  Leave a Feedback
+                </a>
+              </div>
             </div>
 
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Feedback</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <form class="form-mf" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                  <div class="modal-body">
+                      <div class="row">
+                        <div class="col-md-6 mb-3">
+                          <div class="form-group">
+                            <input type="text" name="full_name_feedback" class="form-control input-mf" id="inputName" placeholder="Name">
+                          </div>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                          <div class="form-group">
+                            <label for="ImageInput">Image</label>
+                            <input type="file" name="image_feedback" id="ImageInput" class="form-control input-mf mt-2" placeholder="Image">
+                          </div>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                          <div class="form-group">
+                            <label for="EmailInput">Email</label>
+                            <input type="email" name="email_feedback" id="EmailInput" class="form-control input-mf mt-2" placeholder="example@company.com">
+                          </div>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                          <div class="form-group">
+                            <label for="FieldInput">Field</label>
+                            <input type="text" name="field_feedback" id="FieldInput" class="form-control input-mf mt-2" placeholder="Field *" required>
+                          </div>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                          <div class="form-group">
+                            <textarea id="textMessage" name="feedback" class="form-control input-mf" placeholder="Feedback *" cols="45" rows="8" required></textarea>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Send Feedback</button>
+                  </div>
+                </form>
+                </div>
+              </div>
+            </div>
             <!-- <div id="testimonial-mf" class="owl-carousel owl-theme"></div> -->
 
           </div>
