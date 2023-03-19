@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # External apps
     'rest_framework',
+    'drf_yasg',
     "crispy_forms",
     "crispy_bootstrap5",
     # My apps
@@ -37,6 +38,10 @@ INSTALLED_APPS = [
     'main.apps.MainConfig',
     'api.apps.ApiConfig',
 ]
+
+REST_FRAMEWORK = {
+    
+}
 
 AUTH_USER_MODEL = 'authentication.CustomUser'
 

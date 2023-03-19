@@ -1,0 +1,2031 @@
+openapi: 3.0.2
+info:
+  title: ''
+  version: ''
+paths:
+  /api/v1/posts/:
+    get:
+      operationId: listPosts
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Post'
+          description: ''
+      tags:
+      - api
+    post:
+      operationId: createPost
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Post'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Post'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Post'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Post'
+          description: ''
+      tags:
+      - api
+  /api/v1/post/{id}/:
+    get:
+      operationId: retrievePost
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this post.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Post'
+          description: ''
+      tags:
+      - api
+    put:
+      operationId: updatePost
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this post.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Post'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Post'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Post'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Post'
+          description: ''
+      tags:
+      - api
+    patch:
+      operationId: partialUpdatePost
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this post.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Post'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Post'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Post'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Post'
+          description: ''
+      tags:
+      - api
+    delete:
+      operationId: destroyPost
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this post.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - api
+  /api/v1/socials/:
+    get:
+      operationId: listSocialLinks
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SocialLink'
+          description: ''
+      tags:
+      - api
+    post:
+      operationId: createSocialLink
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SocialLink'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/SocialLink'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/SocialLink'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SocialLink'
+          description: ''
+      tags:
+      - api
+  /api/v1/social/{id}/:
+    get:
+      operationId: retrieveSocialLink
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this social link.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SocialLink'
+          description: ''
+      tags:
+      - api
+    put:
+      operationId: updateSocialLink
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this social link.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SocialLink'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/SocialLink'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/SocialLink'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SocialLink'
+          description: ''
+      tags:
+      - api
+    patch:
+      operationId: partialUpdateSocialLink
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this social link.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SocialLink'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/SocialLink'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/SocialLink'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SocialLink'
+          description: ''
+      tags:
+      - api
+    delete:
+      operationId: destroySocialLink
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this social link.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - api
+  /api/v1/skills/:
+    get:
+      operationId: listSkills
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Skill'
+          description: ''
+      tags:
+      - api
+    post:
+      operationId: createSkill
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Skill'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Skill'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Skill'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Skill'
+          description: ''
+      tags:
+      - api
+  /api/v1/skill/{id}/:
+    get:
+      operationId: retrieveSkill
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this skill.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Skill'
+          description: ''
+      tags:
+      - api
+    put:
+      operationId: updateSkill
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this skill.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Skill'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Skill'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Skill'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Skill'
+          description: ''
+      tags:
+      - api
+    patch:
+      operationId: partialUpdateSkill
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this skill.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Skill'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Skill'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Skill'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Skill'
+          description: ''
+      tags:
+      - api
+    delete:
+      operationId: destroySkill
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this skill.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - api
+  /api/v1/services/:
+    get:
+      operationId: listServices
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Service'
+          description: ''
+      tags:
+      - api
+    post:
+      operationId: createService
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Service'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Service'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Service'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Service'
+          description: ''
+      tags:
+      - api
+  /api/v1/service/{id}/:
+    get:
+      operationId: retrieveService
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this service.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Service'
+          description: ''
+      tags:
+      - api
+    put:
+      operationId: updateService
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this service.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Service'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Service'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Service'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Service'
+          description: ''
+      tags:
+      - api
+    patch:
+      operationId: partialUpdateService
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this service.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Service'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Service'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Service'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Service'
+          description: ''
+      tags:
+      - api
+    delete:
+      operationId: destroyService
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this service.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - api
+  /api/v1/portfolioes/:
+    get:
+      operationId: listPortfolios
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Portfolio'
+          description: ''
+      tags:
+      - api
+    post:
+      operationId: createPortfolio
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Portfolio'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Portfolio'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Portfolio'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Portfolio'
+          description: ''
+      tags:
+      - api
+  /api/v1/portfolio/{id}/:
+    get:
+      operationId: retrievePortfolio
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this portfolio.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Portfolio'
+          description: ''
+      tags:
+      - api
+    put:
+      operationId: updatePortfolio
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this portfolio.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Portfolio'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Portfolio'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Portfolio'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Portfolio'
+          description: ''
+      tags:
+      - api
+    patch:
+      operationId: partialUpdatePortfolio
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this portfolio.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Portfolio'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Portfolio'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Portfolio'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Portfolio'
+          description: ''
+      tags:
+      - api
+    delete:
+      operationId: destroyPortfolio
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this portfolio.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - api
+  /api/v1/feedbacks/:
+    get:
+      operationId: listFeedbacks
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Feedback'
+          description: ''
+      tags:
+      - api
+    post:
+      operationId: createFeedback
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Feedback'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Feedback'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Feedback'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Feedback'
+          description: ''
+      tags:
+      - api
+  /api/v1/feedback/{id}/:
+    get:
+      operationId: retrieveFeedback
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Feedback'
+          description: ''
+      tags:
+      - api
+    put:
+      operationId: updateFeedback
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Feedback'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Feedback'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Feedback'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Feedback'
+          description: ''
+      tags:
+      - api
+    patch:
+      operationId: partialUpdateFeedback
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Feedback'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Feedback'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Feedback'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Feedback'
+          description: ''
+      tags:
+      - api
+    delete:
+      operationId: destroyFeedback
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - api
+  /api/v1/tags/:
+    get:
+      operationId: listTags
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag'
+          description: ''
+      tags:
+      - api
+    post:
+      operationId: createTag
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Tag'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Tag'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Tag'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tag'
+          description: ''
+      tags:
+      - api
+  /api/v1/tag/{id}/:
+    get:
+      operationId: retrieveTag
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this tag.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tag'
+          description: ''
+      tags:
+      - api
+    put:
+      operationId: updateTag
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this tag.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Tag'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Tag'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Tag'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tag'
+          description: ''
+      tags:
+      - api
+    patch:
+      operationId: partialUpdateTag
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this tag.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Tag'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Tag'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Tag'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tag'
+          description: ''
+      tags:
+      - api
+    delete:
+      operationId: destroyTag
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this tag.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - api
+  /api/v1/comments/:
+    get:
+      operationId: listComments
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Comment'
+          description: ''
+      tags:
+      - api
+    post:
+      operationId: createComment
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Comment'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Comment'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Comment'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Comment'
+          description: ''
+      tags:
+      - api
+  /api/v1/comment/{id}/:
+    get:
+      operationId: retrieveComment
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this comment.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Comment'
+          description: ''
+      tags:
+      - api
+    put:
+      operationId: updateComment
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this comment.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Comment'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Comment'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Comment'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Comment'
+          description: ''
+      tags:
+      - api
+    patch:
+      operationId: partialUpdateComment
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this comment.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Comment'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Comment'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Comment'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Comment'
+          description: ''
+      tags:
+      - api
+    delete:
+      operationId: destroyComment
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this comment.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - api
+  /api/v1/replies/:
+    get:
+      operationId: listReplys
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Reply'
+          description: ''
+      tags:
+      - api
+    post:
+      operationId: createReply
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Reply'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Reply'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Reply'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Reply'
+          description: ''
+      tags:
+      - api
+  /api/v1/reply/{id}/:
+    get:
+      operationId: retrieveReply
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this reply.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Reply'
+          description: ''
+      tags:
+      - api
+    put:
+      operationId: updateReply
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this reply.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Reply'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Reply'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Reply'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Reply'
+          description: ''
+      tags:
+      - api
+    patch:
+      operationId: partialUpdateReply
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this reply.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Reply'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Reply'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Reply'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Reply'
+          description: ''
+      tags:
+      - api
+    delete:
+      operationId: destroyReply
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this reply.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - api
+  /api/v1/contactusers/:
+    get:
+      operationId: listContactUsers
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ContactUser'
+          description: ''
+      tags:
+      - api
+    post:
+      operationId: createContactUser
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ContactUser'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ContactUser'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ContactUser'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ContactUser'
+          description: ''
+      tags:
+      - api
+  /api/v1/contactuser/{id}/:
+    get:
+      operationId: retrieveContactUser
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this contact user.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ContactUser'
+          description: ''
+      tags:
+      - api
+    put:
+      operationId: updateContactUser
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this contact user.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ContactUser'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ContactUser'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ContactUser'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ContactUser'
+          description: ''
+      tags:
+      - api
+    patch:
+      operationId: partialUpdateContactUser
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this contact user.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ContactUser'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ContactUser'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ContactUser'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ContactUser'
+          description: ''
+      tags:
+      - api
+    delete:
+      operationId: destroyContactUser
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this contact user.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - api
+components:
+  schemas:
+    Post:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        author:
+          type: object
+          properties:
+            id:
+              type: integer
+              readOnly: true
+            full_name:
+              type: string
+              maxLength: 150
+            email:
+              type: string
+              format: email
+              maxLength: 250
+            username:
+              type: string
+              maxLength: 200
+            age:
+              type: integer
+            phone_number:
+              type: string
+              maxLength: 200
+            bio:
+              type: string
+            level:
+              type: string
+              maxLength: 300
+            fields:
+              type: string
+            image:
+              type: string
+              format: binary
+            address:
+              type: string
+              nullable: true
+          required:
+          - full_name
+          - email
+          - username
+          - age
+          - phone_number
+          - bio
+          - level
+          - fields
+        title:
+          type: string
+          maxLength: 250
+        category:
+          type: string
+          maxLength: 100
+        content:
+          type: string
+        image:
+          type: string
+          format: binary
+        created:
+          type: string
+          format: date-time
+          readOnly: true
+        updated:
+          type: string
+          format: date-time
+          readOnly: true
+        tags:
+          type: array
+          items:
+            type: string
+          readOnly: true
+      required:
+      - author
+      - title
+      - category
+      - content
+      - image
+    SocialLink:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        user:
+          type: object
+          properties:
+            id:
+              type: integer
+              readOnly: true
+            full_name:
+              type: string
+              maxLength: 150
+            email:
+              type: string
+              format: email
+              maxLength: 250
+            username:
+              type: string
+              maxLength: 200
+            age:
+              type: integer
+            phone_number:
+              type: string
+              maxLength: 200
+            bio:
+              type: string
+            level:
+              type: string
+              maxLength: 300
+            fields:
+              type: string
+            image:
+              type: string
+              format: binary
+            address:
+              type: string
+              nullable: true
+          required:
+          - full_name
+          - email
+          - username
+          - age
+          - phone_number
+          - bio
+          - level
+          - fields
+        title:
+          type: string
+          maxLength: 300
+        link:
+          type: string
+          format: uri
+          maxLength: 200
+          pattern: "^(?:[a-z0-9.+-]*)://(?:[^\\s:@/]+(?::[^\\s:@/]*)?@)?(?:(?:0|25[0-5]|2[0-4][0-9]|1[0-9]?[0-9]?|[1-9][0-9]?)(?:\\\
+            .(?:0|25[0-5]|2[0-4][0-9]|1[0-9]?[0-9]?|[1-9][0-9]?)){3}|\\[[0-9a-f:.]+\\\
+            ]|([a-z\xA1-\uFFFF0-9](?:[a-z\xA1-\uFFFF0-9-]{0,61}[a-z\xA1-\uFFFF0-9])?(?:\\\
+            .(?!-)[a-z\xA1-\uFFFF0-9-]{1,63}(?<!-))*\\.(?!-)(?:[a-z\xA1-\uFFFF-]{2,63}|xn--[a-z0-9]{1,59})(?<!-)\\\
+            .?|localhost))(?::[0-9]{1,5})?(?:[/?#][^\\s]*)?\\z"
+        icon:
+          type: string
+          description: class atributi uchun qo'yiladigan class nomi
+          maxLength: 300
+      required:
+      - user
+      - title
+      - link
+      - icon
+    Skill:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        user:
+          type: object
+          properties:
+            id:
+              type: integer
+              readOnly: true
+            full_name:
+              type: string
+              maxLength: 150
+            email:
+              type: string
+              format: email
+              maxLength: 250
+            username:
+              type: string
+              maxLength: 200
+            age:
+              type: integer
+            phone_number:
+              type: string
+              maxLength: 200
+            bio:
+              type: string
+            level:
+              type: string
+              maxLength: 300
+            fields:
+              type: string
+            image:
+              type: string
+              format: binary
+            address:
+              type: string
+              nullable: true
+          required:
+          - full_name
+          - email
+          - username
+          - age
+          - phone_number
+          - bio
+          - level
+          - fields
+        title:
+          type: string
+          maxLength: 500
+        description:
+          type: string
+          nullable: true
+        protsent:
+          type: integer
+      required:
+      - user
+      - title
+      - protsent
+    Service:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        user:
+          type: object
+          properties:
+            id:
+              type: integer
+              readOnly: true
+            full_name:
+              type: string
+              maxLength: 150
+            email:
+              type: string
+              format: email
+              maxLength: 250
+            username:
+              type: string
+              maxLength: 200
+            age:
+              type: integer
+            phone_number:
+              type: string
+              maxLength: 200
+            bio:
+              type: string
+            level:
+              type: string
+              maxLength: 300
+            fields:
+              type: string
+            image:
+              type: string
+              format: binary
+            address:
+              type: string
+              nullable: true
+          required:
+          - full_name
+          - email
+          - username
+          - age
+          - phone_number
+          - bio
+          - level
+          - fields
+        title:
+          type: string
+          maxLength: 50
+        description:
+          type: string
+          maxLength: 300
+        icon:
+          type: string
+          description: class atributi uchun qo'yiladigan class nomi
+          maxLength: 300
+      required:
+      - user
+      - title
+      - description
+      - icon
+    Portfolio:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        user:
+          type: object
+          properties:
+            id:
+              type: integer
+              readOnly: true
+            full_name:
+              type: string
+              maxLength: 150
+            email:
+              type: string
+              format: email
+              maxLength: 250
+            username:
+              type: string
+              maxLength: 200
+            age:
+              type: integer
+            phone_number:
+              type: string
+              maxLength: 200
+            bio:
+              type: string
+            level:
+              type: string
+              maxLength: 300
+            fields:
+              type: string
+            image:
+              type: string
+              format: binary
+            address:
+              type: string
+              nullable: true
+          required:
+          - full_name
+          - email
+          - username
+          - age
+          - phone_number
+          - bio
+          - level
+          - fields
+        title:
+          type: string
+          maxLength: 500
+        description:
+          type: string
+        image:
+          type: string
+          format: binary
+        category:
+          type: string
+          maxLength: 100
+        client:
+          type: string
+          maxLength: 500
+        url:
+          type: string
+          format: uri
+          nullable: true
+          maxLength: 200
+          pattern: "^(?:[a-z0-9.+-]*)://(?:[^\\s:@/]+(?::[^\\s:@/]*)?@)?(?:(?:0|25[0-5]|2[0-4][0-9]|1[0-9]?[0-9]?|[1-9][0-9]?)(?:\\\
+            .(?:0|25[0-5]|2[0-4][0-9]|1[0-9]?[0-9]?|[1-9][0-9]?)){3}|\\[[0-9a-f:.]+\\\
+            ]|([a-z\xA1-\uFFFF0-9](?:[a-z\xA1-\uFFFF0-9-]{0,61}[a-z\xA1-\uFFFF0-9])?(?:\\\
+            .(?!-)[a-z\xA1-\uFFFF0-9-]{1,63}(?<!-))*\\.(?!-)(?:[a-z\xA1-\uFFFF-]{2,63}|xn--[a-z0-9]{1,59})(?<!-)\\\
+            .?|localhost))(?::[0-9]{1,5})?(?:[/?#][^\\s]*)?\\z"
+        created:
+          type: string
+          format: date-time
+          readOnly: true
+        updated:
+          type: string
+          format: date-time
+          readOnly: true
+      required:
+      - user
+      - title
+      - description
+      - image
+      - category
+      - client
+    Feedback:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        full_name_feedback:
+          type: string
+          nullable: true
+          maxLength: 150
+        email_feedback:
+          type: string
+          format: email
+          nullable: true
+          maxLength: 250
+        field_feedback:
+          type: string
+          maxLength: 200
+        feedback:
+          type: string
+        image_feedback:
+          type: string
+          format: binary
+          nullable: true
+        show:
+          type: boolean
+      required:
+      - feedback
+    Tag:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        title:
+          type: string
+          maxLength: 100
+        created:
+          type: string
+          format: date-time
+          readOnly: true
+        updated:
+          type: string
+          format: date-time
+          readOnly: true
+      required:
+      - title
+    Comment:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        post:
+          type: object
+          properties:
+            id:
+              type: integer
+              readOnly: true
+            author:
+              type: object
+              properties:
+                id:
+                  type: integer
+                  readOnly: true
+                full_name:
+                  type: string
+                  maxLength: 150
+                email:
+                  type: string
+                  format: email
+                  maxLength: 250
+                username:
+                  type: string
+                  maxLength: 200
+                age:
+                  type: integer
+                phone_number:
+                  type: string
+                  maxLength: 200
+                bio:
+                  type: string
+                level:
+                  type: string
+                  maxLength: 300
+                fields:
+                  type: string
+                image:
+                  type: string
+                  format: binary
+                address:
+                  type: string
+                  nullable: true
+              required:
+              - full_name
+              - email
+              - username
+              - age
+              - phone_number
+              - bio
+              - level
+              - fields
+            title:
+              type: string
+              maxLength: 250
+            category:
+              type: string
+              maxLength: 100
+            content:
+              type: string
+            image:
+              type: string
+              format: binary
+            created:
+              type: string
+              format: date-time
+              readOnly: true
+            updated:
+              type: string
+              format: date-time
+              readOnly: true
+            tags:
+              type: array
+              items:
+                type: string
+              readOnly: true
+          required:
+          - author
+          - title
+          - category
+          - content
+          - image
+        full_name:
+          type: string
+          nullable: true
+          maxLength: 200
+        content:
+          type: string
+        image:
+          type: string
+          format: binary
+          nullable: true
+        created:
+          type: string
+          format: date-time
+          readOnly: true
+        updated:
+          type: string
+          format: date-time
+          readOnly: true
+      required:
+      - post
+      - content
+    Reply:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        comment:
+          type: object
+          properties:
+            id:
+              type: integer
+              readOnly: true
+            post:
+              type: object
+              properties:
+                id:
+                  type: integer
+                  readOnly: true
+                author:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      readOnly: true
+                    full_name:
+                      type: string
+                      maxLength: 150
+                    email:
+                      type: string
+                      format: email
+                      maxLength: 250
+                    username:
+                      type: string
+                      maxLength: 200
+                    age:
+                      type: integer
+                    phone_number:
+                      type: string
+                      maxLength: 200
+                    bio:
+                      type: string
+                    level:
+                      type: string
+                      maxLength: 300
+                    fields:
+                      type: string
+                    image:
+                      type: string
+                      format: binary
+                    address:
+                      type: string
+                      nullable: true
+                  required:
+                  - full_name
+                  - email
+                  - username
+                  - age
+                  - phone_number
+                  - bio
+                  - level
+                  - fields
+                title:
+                  type: string
+                  maxLength: 250
+                category:
+                  type: string
+                  maxLength: 100
+                content:
+                  type: string
+                image:
+                  type: string
+                  format: binary
+                created:
+                  type: string
+                  format: date-time
+                  readOnly: true
+                updated:
+                  type: string
+                  format: date-time
+                  readOnly: true
+                tags:
+                  type: array
+                  items:
+                    type: string
+                  readOnly: true
+              required:
+              - author
+              - title
+              - category
+              - content
+              - image
+            full_name:
+              type: string
+              nullable: true
+              maxLength: 200
+            content:
+              type: string
+            image:
+              type: string
+              format: binary
+              nullable: true
+            created:
+              type: string
+              format: date-time
+              readOnly: true
+            updated:
+              type: string
+              format: date-time
+              readOnly: true
+          required:
+          - post
+          - content
+        full_name_reply:
+          type: string
+          nullable: true
+          maxLength: 200
+        content_reply:
+          type: string
+        image_reply:
+          type: string
+          format: binary
+          nullable: true
+        created:
+          type: string
+          format: date-time
+          readOnly: true
+        updated:
+          type: string
+          format: date-time
+          readOnly: true
+        comment_id:
+          type: integer
+      required:
+      - comment
+      - content_reply
+      - comment_id
+    ContactUser:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        full_name:
+          type: string
+          maxLength: 200
+        email:
+          type: string
+          format: email
+          maxLength: 250
+        subject:
+          type: string
+          maxLength: 300
+        message:
+          type: string
+      required:
+      - full_name
+      - email
+      - subject
+      - message
