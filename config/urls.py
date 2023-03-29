@@ -14,7 +14,7 @@ schema_view = drf_schema_view(
     description="Cho'girmali Blog saytining api'dan foydalanish bo'yicha dokumentatsiya",
     default_version='v1',
     terms_of_service='https://www.google.com/policies/terms/',
-    contact=openapi.Contact(email='chogirmali.yigit@gmal.com')
+    contact=openapi.Contact(email='chogirmali.yigit@gmail.com')
     ),
     public=True,
     permission_classes=(AllowAny, )

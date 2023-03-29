@@ -1,5 +1,3 @@
-import os
-from django.contrib.messages import constants as messages
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -10,7 +8,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-iq7)jqy!kw2+^&9g(hl@06i=s8t9=uy9-$sulz3vip)czx$$yo'
+SECRET_KEY = 'django-insecure-chsi@aob#+_sgcv#av8kfvq&)i%cgp-#x%7)7o=l1$n-ew1dns'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -21,27 +19,24 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # External apps
+    # Other apps
     'rest_framework',
-    'drf_yasg',
     "crispy_forms",
     "crispy_bootstrap5",
+    'drf_yasg',
     # My apps
+    'api.apps.ApiConfig',
+    'main.apps.MainConfig',
     'blog.apps.BlogConfig',
     'auth.apps.AuthConfig',
-    'main.apps.MainConfig',
-    'api.apps.ApiConfig',
 ]
-
-REST_FRAMEWORK = {
-    
-}
 
 AUTH_USER_MODEL = 'authentication.CustomUser'
 
@@ -124,6 +119,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = 'staticfiles'
 STATICFILES_DIRS = [
     BASE_DIR / 'static'
 ]
@@ -139,18 +135,3 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 
 CRISPY_TEMPLATE_PACK = "bootstrap5"
-
-MESSAGE_TAGS = {
-    messages.DEBUG: 'alert-secondary',
-    messages.INFO: 'alert-info',
-    messages.SUCCESS: 'alert-success',
-    messages.WARNING: 'alert-warning',
-    messages.ERROR: 'alert-danger',
-}
-
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_POST = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'chogirmali.yigit13@gmail.com'
-EMAIL_HOST_PASSWORD = 'jjcvghfhwutftyvx'

@@ -18,7 +18,9 @@
             <li class="breadcrumb-item">
               <a href="{% url 'index' %}">Home</a>
             </li>
-            <li class="breadcrumb-item active">Blog</li>
+            <li class="breadcrumb-item active">
+              <a href="{% url 'all_posts' %}">Blog</a>
+            </li>
             <li class="breadcrumb-item active">Post Details</li>
           </ol>
         </div>
@@ -41,7 +43,7 @@
                 <ul>
                   <li>
                     <span class="bi bi-person"></span>
-                    <a href="{% url 'profile' %}">{{ post.author.full_name }}</a>
+                    {{ post.author.full_name }}
                   </li>
                   <li>
                     <span class="bi bi-tag"></span>

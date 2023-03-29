@@ -940,6 +940,7 @@ a:hover {
 # Portfolio
 --------------------------------------------------------------*/
 .work-box {
+  height: 400px;
   margin-bottom: 3rem;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;

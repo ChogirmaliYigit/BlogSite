@@ -41,14 +41,16 @@
                     </div>
                     <div class="col-sm-6 col-md-7">
                       <div class="about-info">
-                        <p><span class="title-s">Name: </span> <span><a href="{% url 'profile' %}">{{ user.full_name  }}</a></span></p>
+                        <p><span class="title-s">Name: </span> <span><a href="">{{ user.full_name  }}</a></span></p>
                         <p><span class="title-s">Profile: </span> <span>{{ user.level }}</span></p>
                         <p><span class="title-s">Email: </span> <span>{{ user.email }}</span></p>
                         <p><span class="title-s">Phone: </span> <span>{{ user.phone_number }}</span></p>
                       </div>
                     </div>
                   </div>
-                  <h6 class="ms-5" style="margin-top: -20px;"><a href="{% url 'profile' %}">Visit Profile <i class="bi bi-person-badge"></i></a></h6>
+                  {% comment %}
+                  <h6 class="ms-5" style="margin-top: -20px;"><a href="{% url 'profile' %}">Visit Profile <i class="bi bi-person-badge"></i></a></h6> -->
+                  {% endcomment %}
                   <div class="skill-mf">
                     <p class="title-s">Skill</p>
                     {% for skill in skills %}
@@ -124,7 +126,7 @@
         </div>
       </div>
     </section><!-- End Services Section -->
-
+Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus nemo perspiciatis dolore natus dolorem eaque nam, reprehenderit ea veniam quasi maxime voluptate sed accusamus dolores facere nostrum nobis similique obcaecati, blanditiis illum inventore minus saepe! Dolorem voluptatibus id veritatis, omnis, tempora cum amet at sapiente animi optio vitae odio delectus?
     <!-- ======= Counter Section ======= -->
     <div class="section-counter paralax-mf bg-image" style="background-image: url({% static 'assets/img/counters-bg.jpg' %})">
       <div class="overlay-mf"></div>
@@ -176,7 +178,8 @@
           </div>
         </div>
       </div>
-    </div><!-- End Counter Section -->
+    </div>
+    <!-- End Counter Section -->
 
     <!-- ======= Portfolio Section ======= -->
     <section id="work" class="portfolio-mf sect-pt4 route">
@@ -360,10 +363,8 @@
               </div>
               <div class="card-footer">
                 <div class="post-author">
-                  <a href="{% url 'profile' %}">
-                    <img src="{{ post.author.image.url }}" alt="{{ post.author.full_name }}" title="{{ post.author.full_name }}" class="avatar rounded-circle">
-                    <span class="author">{{ post.author.full_name }}</span>
-                  </a>
+                  <img src="{{ post.author.image.url }}" alt="{{ post.author.full_name }}" title="{{ post.author.full_name }}" class="avatar rounded-circle">
+                  <span class="author">{{ post.author.full_name }}</span>
                 </div>
                 <div class="post-date">
                   <span class="bi bi-clock"></span> {{ post.updated.date }}
@@ -474,7 +475,7 @@
 
   </main>
 
-  <div id="preloader"></div>
+  <!-- <div id="preloader"></div> -->
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
 {% endblock %}

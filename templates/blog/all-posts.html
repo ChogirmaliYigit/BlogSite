@@ -484,7 +484,7 @@
                                         <span class="bg-orange"><a href="{% url 'post' post.id %}" title="{{ post.category }}">{{ post.category }}</a></span>
                                         <h4><a href="{% url 'post' post.id %}" title="{{ post.title }}">{{ post.title|truncatewords:2 }}</a></h4>
                                         <small><a href="{% url 'post' post.id %}" title="{{ post.title }}">{{ post.updated.date }}</a></small>
-                                        <small><a href="{% url 'profile' %}" title="{{ post.author.full_name }}">{{ post.author.full_name }}</a></small>
+                                        <small>{{ post.author.full_name }}</small>
                                     </div>
                                 </div>
                             </div>
@@ -570,7 +570,7 @@
                                         <p>{{ post.content|truncatewords:20 }}</p>
                                         <small class="firstsmall"><a class="bg-orange" href="#" title="{{ post.category }}">{{ post.category }}</a></small>
                                         <small><a href="#" title="">{{ post.updated.date }}</a></small>
-                                        <small><a href="{% url 'profile' %}" title="">{{ post.author.full_name }}</a></small>
+                                        <small>{{ post.author.full_name }}</small>
                                         <small><a href="{% url 'post' post.id %}" title="Comments"><i class="fa fa-comments" aria-hidden="true"></i> {{ post.comments.count }}</a></small>
                                     </div>
                                 </div>
@@ -788,7 +788,7 @@
                         <br>
                         <div class="copyright">
                             &copy; Design by <a href="http://html.design">HTML Design</a>.
-                            &copy; Backend by <a href="{% url 'profile' %}">Cho'girmali yigit</a>.
+                            &copy; Backend by Cho'girmali yigit.
                         </div>
                     </div>
                 </div>
